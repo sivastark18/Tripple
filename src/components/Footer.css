@@ -1,0 +1,91 @@
+/* Wrap your entire content including footer in a flex container */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area should take up all available space */
+.main-content {
+  flex: 1;
+}
+
+/* Footer styles */
+footer {
+  background-color: #000000; /* Changed to black */
+  padding: 1rem 0.5rem; /* Reduced padding */
+  color: #ffffff;
+  border-top: 1px solid #444; /* Slightly darker border */
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, padding 0.3s ease; /* Added transitions */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-info, .footer-social {
+  flex: 1;
+  margin: 0 0.5rem; /* Reduced margin */
+}
+
+.footer-info h3, .footer-social h3 {
+  font-size: 1rem; /* Reduced font size */
+  margin-bottom: 0.25rem; /* Reduced margin-bottom */
+  text-align: center;
+}
+
+.footer-info p, .footer-social a {
+  margin: 0.125rem 0; /* Reduced margin */
+}
+
+.footer-info a, .footer-social a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Added transition */
+}
+
+.footer-info a:hover, .footer-social a:hover {
+  text-decoration: underline;
+  color: #ffffff; /* Change color on hover */
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem 0; /* Reduced margin */
+}
+
+.footer-social a img {
+  width: 20px; /* Set the width of the icons */
+  height: 20px; /* Set the height of the icons */
+  margin-right: 0.5rem; /* Add space between icon and text */
+  border-radius: 50%; /* Make the icons circular */
+  object-fit: cover; /* Ensure the image fits well in the circular shape */
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 0.5rem; /* Reduced padding */
+  text-align: center;
+  font-size: 0.75rem; /* Reduced font size */
+  color: #b3b3b3;
+  transition: color 0.3s ease; /* Added transition */
+}
+
+footer:hover {
+  background-color: #333333; /* Slightly change background on hover */
+}

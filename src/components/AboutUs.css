@@ -1,0 +1,120 @@
+/* Base styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  color: #ffa07a;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #ffd700;
+}
+
+p {
+  font-size: 1em;
+  margin: 0.5em 0;
+  color: #d3d3d3;
+}
+
+/* Page Container */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2em;
+  background: url('C:\Users\siva\Desktop\react\react\tripple\src\components\images\bg3.jpg') no-repeat center center/cover;
+}
+
+/* About Us Section */
+.about-us {
+  flex: 1;
+  max-width: 900px;
+  margin: 2em auto;
+  text-align: left;
+  background: rgba(18, 18, 18, 0.8);
+  padding: 2em;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 160, 122, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+.about-us p {
+  margin: 0.5em 0;
+}
+
+/* Map Section */
+.map {
+  margin: 2em auto;
+  max-width: 1200px;
+  width: 100%;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.map iframe {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 400px;
+}
+
+@media (max-width: 600px) {
+  .map iframe {
+    height: 300px;
+  }
+}
+
+/* FAQ Section */
+.faq {
+  max-width: 900px;
+  margin: 2em auto;
+  text-align: left;
+}
+
+.faq h2 {
+  margin-bottom: 1em;
+  font-family: 'Merriweather', serif;
+}
+
+.faq-item {
+  margin-bottom: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.faq-item h3 {
+  color: #ffd700;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

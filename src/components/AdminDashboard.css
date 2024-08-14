@@ -1,0 +1,363 @@
+/* General Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* General Styles */
+body {
+  background-color: #f4f7fa;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.admin-dashboard {
+  max-width: 90%;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  overflow: hidden;
+  color: #000000;
+  animation: slideIn 0.5s ease-out;
+  transition: box-shadow 0.3s ease;
+}
+
+.admin-dashboard:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.logout-button {
+  background: linear-gradient(135deg, #fc823d, #fc8d2d);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #fd9c5a, #fd9e4a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+/* General Table Styles */
+.bookings-table, .trips-table, .users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #000000;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.bookings-table th, .bookings-table td,
+.trips-table th, .trips-table td,
+.users-table th, .users-table td {
+  padding: 18px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.bookings-table th, .trips-table th, .users-table th {
+  background-color: #5a9bd4;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.bookings-table tr:nth-child(even),
+.trips-table tr:nth-child(even),
+.users-table tr:nth-child(even) {
+  background-color: #f2f4f8;
+}
+
+.bookings-table tr:hover,
+.trips-table tr:hover,
+.users-table tr:hover {
+  background-color: #e8f4fd;
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+
+.bookings-table td, .trips-table td, .users-table td {
+  font-size: 15px;
+  color: #000000;
+}
+
+/* Enhanced Button Styles */
+.edit-button, .delete-button {
+  padding: 12px 18px;  /* Increased padding for a larger button size */
+  font-size: 16px;     /* Increased font size for better readability */
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;  /* Slightly more rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Edit Button Color Scheme */
+.edit-button {
+  background-color: #4a90e2;  /* Brighter blue for better visibility */
+  color: #ffffff;
+}
+
+/* Delete Button Color Scheme */
+.delete-button {
+  background-color: #e74c3c;  /* Stronger red for a more noticeable delete action */
+  color: #ffffff;
+}
+
+/* Hover Effects with Animations */
+.edit-button:hover {
+  background-color: #357ab8;  /* Darker blue on hover */
+  transform: scale(1.08);     /* Slightly larger scale for emphasis */
+  box-shadow: 0 7px 15px rgba(53, 122, 184, 0.3);  /* Enhanced shadow for depth */
+  animation: pulse 0.7s infinite;  /* Continued pulse animation */
+}
+
+.delete-button:hover {
+  background-color: #c0392b;  /* Darker red on hover */
+  transform: scale(1.08);     /* Slightly larger scale for emphasis */
+  box-shadow: 0 7px 15px rgba(192, 57, 43, 0.3);  /* Enhanced shadow for depth */
+  animation: pulse 0.7s infinite;  /* Continued pulse animation */
+}
+
+/* Button Pressed (Active) State */
+.edit-button:active, .delete-button:active {
+  transform: scale(0.95);  /* Slight shrink on active state */
+  transition: transform 0.2s;
+}
+
+/* Edit Form Styles */
+.edit-form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;/* Enhanced Icon Animation for Edit and Delete Buttons */
+  @keyframes slideBounceInLeft {
+    0% { transform: translateX(-20px) scale(0.8); opacity: 0; }
+    60% { transform: translateX(5px) scale(1.1); opacity: 1; }
+    80% { transform: translateX(-2px) scale(1.05); }
+    100% { transform: translateX(0) scale(1); }
+  }
+  
+  @keyframes slideBounceInRight {
+    0% { transform: translateX(20px) scale(0.8); opacity: 0; }
+    60% { transform: translateX(-5px) scale(1.1); opacity: 1; }
+    80% { transform: translateX(2px) scale(1.05); }
+    100% { transform: translateX(0) scale(1); }
+  }
+  
+  .edit-button::before {
+    content: '✏️';
+    display: inline-block;
+    margin-right: 8px;
+    animation: slideBounceInLeft 0.5s ease-out;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .delete-button::before {
+    content: '🗑️';
+    display: inline-block;
+    margin-right: 8px;
+    animation: slideBounceInRight 0.5s ease-out;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover Effects with Icon Interaction */
+  .edit-button:hover::before {
+    transform: scale(1.2) rotate(-5deg);
+    color: #ffeb3b;
+  }
+  
+  .delete-button:hover::before {
+    transform: scale(1.2) rotate(5deg);
+    color: #ff5252;
+  }
+  
+  margin-top: 20px;
+  color: #000000;
+  animation: slideIn 0.5s ease-out;
+}
+
+.edit-form h2 {
+  font-size: 22px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.edit-form form {
+  display: grid;
+  gap: 18px;
+}
+
+.edit-form label {
+  font-size: 15px;
+  color: #000000;
+}
+
+.edit-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #000000;
+  transition: border-color 0.3s ease;
+}
+
+.edit-form input:focus {
+  border-color: #5a9bd4;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(90,155,212,0.2);
+}
+
+.edit-form button {
+  background: #5a9bd4;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.edit-form button:hover {
+  background: #417cbf;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.edit-form .cancel-button {
+  background: #e0e0e0;
+  color: #333;
+  margin-left: 10px;
+}
+
+.edit-form .cancel-button:hover {
+  background: #bdbdbd;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #d32f2f;
+  margin-bottom: 20px;
+  font-size: 16px;
+  animation: pulse 1s infinite;
+}
+
+/* No Data Message Styling */
+.no-bookings, .no-trips, .no-users {
+  font-size: 18px;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Responsive Table Scroll */
+@media screen and (max-width: 1200px) {
+  .bookings-table, .trips-table, .users-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Custom Scrollbar */
+.admin-dashboard::-webkit-scrollbar {
+  width: 10px;
+}
+
+.admin-dashboard::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.admin-dashboard::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.admin-dashboard::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Additional Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .edit-button, .delete-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .admin-dashboard {
+    padding: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+  }
+
+  .logout-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .edit-button, .delete-button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .dashboard-title {
+    font-size: 20px;
+  }
+
+  .logout-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .edit-form {
+    padding: 15px;
+  }
+}

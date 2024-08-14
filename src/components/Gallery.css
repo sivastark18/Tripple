@@ -1,0 +1,97 @@
+/* src/components/Gallery.css */
+.gallery-page {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('C:/Users/siva/Desktop/react/react/tripple/src/components/images/bg3.jpg') no-repeat center center fixed; /* Add background image */
+  background-size: cover; /* Ensure the background covers the whole page */
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Fixed grid columns */
+  gap: 1.5em; /* Increased gap for better spacing */
+  max-width: 1200px; /* Max width for the grid */
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Fixed height for uniform containers */
+  perspective: 1000px; /* Add perspective for the flip effect */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out; /* Smooth transition for the flip effect */
+  transform-style: preserve-3d; /* Ensure child elements are transformed */
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Flip effect on hover */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back face when flipped */
+  border-radius: 12px; /* Rounded corners */
+  color: #000; /* Set text color to black */
+}
+
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg); /* Front face is visible initially */
+}
+
+.card-back {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background color of the back */
+  color: #000; /* Text color on the back set to black */
+  transform: rotateY(180deg); /* Back face is hidden initially */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding doesn't affect the size */
+}
+
+.card-back h2,
+.card-back p {
+  color: #000; /* Set text color to black */
+}
+
+.card img {
+  width: 100%; /* Full width of the card */
+  height: 100%; /* Full height of the card */
+  object-fit: cover; /* Ensure the image covers the space without distortion */
+  border-radius: 12px; /* Rounded corners */
+  transition: opacity 0.4s ease; /* Smooth transition */
+  box-sizing: border-box; /* Ensure border-radius doesn't affect the size */
+}
+
+.card:hover img {
+  opacity: 0.7; /* Slightly fade image on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller columns for smaller screens */
+    gap: 1em; /* Adjusted gap */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+    gap: 0.5em; /* Further adjusted gap */
+  }
+}

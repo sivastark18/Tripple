@@ -1,0 +1,553 @@
+/* Define CSS variables for colors */
+:root {
+  --primary-color: #333;
+  --secondary-color: #555;
+  --background-color: #fff;
+  --highlight-color: #eed147;
+  --text-color: #222;
+  --muted-text-color: #666;
+  --link-color: #007BFF;
+  --link-hover-color: #0056b3;
+}
+
+/* Base styles for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--highlight-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--highlight-color);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--highlight-color);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Home Header */
+.home-header {
+  background-image: url('./images/g4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255);
+  padding: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.h1title {
+  text-align: center;
+  margin: 20px;
+  color: var(--highlight-color);
+}
+
+.h1title h2 {
+  margin: 0;
+  font-size: 3em; /* Increased for better readability */
+  color: var(--secondary-color);
+  font-weight: 400; /* Lighter weight for better readability */
+}
+
+.h1title h1 {
+  margin: 10px 0;
+  font-size: 5em; /* Increased for better readability */
+  color: white;
+  transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  font-weight: 700; /* Bold weight for emphasis */
+}
+
+.h1title h1:hover {
+  color: var(--highlight-color);
+  transform: scale(1.1);
+}
+
+.h1title p {
+  margin: 10px 0;
+  font-size: 1.5em; /* Increased for better readability */
+  color: var(--muted-text-color);
+}
+
+/* Home Content */
+.home-content {
+  background-image: url('./images/bg3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2em 0;
+}
+
+/* Company Description */
+.company-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 10%;
+  background-color: rgba(249, 249, 249, 0.8);
+  animation: fadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.company-card {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  animation: slideIn 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  padding: 1em; /* Added padding for better spacing */
+}
+
+.company-image {
+  width: 50%;
+  height: auto;
+  border-radius: 8px 0 0 8px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.company-image:hover {
+  transform: scale(1.1);
+}
+
+.company-info {
+  width: 50%;
+  padding: 2em;
+  color: var(--text-color);
+}
+
+.company-info h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.5em; /* Adjusted for readability */
+  font-weight: 600; /* Slightly bolder for emphasis */
+}
+
+.company-info p {
+  font-size: 1em; /* Adjusted for readability */
+  color: var(--muted-text-color);
+}
+
+.company-info button {
+  display: block;
+  margin-top: 1em;
+  padding: 0.75em 1.5em; /* Adjusted for readability */
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  animation: glow 2s infinite; /* Glowing effect */
+  transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  font-size: 1em; /* Adjusted for readability */
+}
+
+.company-info button:hover {
+  background-color: var(--secondary-color);
+  animation: pulse 1s infinite; /* Pulse effect */
+  transform: scale(1.05);
+}
+
+.company-info button:active {
+  animation: bounce 0.5s; /* Bounce effect on click */
+}
+
+.detailed-description {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #ddd;
+}
+
+/* Trips Section */
+.trips-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 10%;
+  background-color: rgba(249, 249, 249, 0.8);
+}
+
+.trips-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em; /* Increased gap for better spacing */
+  flex-wrap: wrap;
+}
+
+.trip-card {
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.trip-card:hover {
+  transform: scale(1.05);
+}
+
+.trip-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Organizers Section */
+.organizers-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 10%;
+  background-color: rgba(249, 249, 249, 0.8);
+}
+
+.organizers-section h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2em; /* Adjusted for readability */
+  font-weight: 600; /* Slightly bolder for emphasis */
+}
+
+.organizers-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em; /* Increased gap for better spacing */
+  flex-wrap: wrap;
+}
+
+.organizer-card {
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.organizer-card:hover {
+  transform: scale(1.05);
+}
+
+.organizer-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Communities Section */
+/* Communities Section */
+.communities-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 10%;
+  background-color: rgba(249, 249, 249, 0.8);
+}
+
+.communities-section h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.communities-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.community-card {
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color);
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.community-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+.community-card h3 {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.community-card p {
+  color: var(--muted-text-color);
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+.community-card button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #eeb380;  /* Vibrant coral color */
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid #dc8b35;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.community-card button:hover {
+  background-color: white;
+  color: #d39634;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.community-card button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.join-now-btn {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--highlight-color);
+}
+
+.join-now-btn:hover {
+  background-color: transparent;
+  color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+.join-now-btn:active {
+  transform: scale(0.95);
+}
+
+/* Session Section */
+.session-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 10%;
+  background-color: rgba(249, 249, 249, 0.8);
+}
+
+.session-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.session-card {
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  color: black; /* Set text color to black */
+}
+
+.session-card:hover {
+  transform: scale(1.05);
+}
+
+.session-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.session-card h3,
+.session-card p {
+  color: black; /* Set header and paragraph text color to black */
+}
+
+/* Contact Us Section */
+.contact-us-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 10%;
+  background-color: rgba(249, 249, 249, 0.8);
+}
+
+.contact-us-section h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2em; /* Adjusted for readability */
+  font-weight: 600; /* Slightly bolder for emphasis */
+}
+
+.contact-us-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us-form label {
+  align-self: flex-start;
+  font-size: 1em; /* Adjusted for readability */
+  color: var(--text-color);
+}
+
+.contact-us-form input,
+.contact-us-form textarea {
+  width: 100%;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em; /* Adjusted for readability */
+}
+
+.contact-us-form button {
+  padding: 0.75em 1.5em; /* Adjusted for readability */
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  font-size: 1em; /* Adjusted for readability */
+}
+
+.contact-us-form button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+}
+
+.footer a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.footer a:hover {
+  color: var(--link-hover-color);
+}

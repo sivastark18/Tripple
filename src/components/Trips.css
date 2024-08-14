@@ -1,0 +1,114 @@
+/* src/components/Trips.css */
+.trips-page {
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.9); /* Match background color to trip card, slightly more opaque */
+  background-image: url('C:/Users/siva/Desktop/react/react/tripple/src/components/images/bg3.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover; /* Ensure the background covers the whole page */
+  display: flex; /* Flexbox for centering content */
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+.trip-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  width: 100%;
+  max-width: 1200px; /* Optional: Limit the width for better aesthetics */
+}
+
+.trip-card {
+  background-color: rgba(255, 255, 255, 0.5); /* Further reduced opacity for more transparency */
+  margin: 1em;
+  padding: 1em;
+  width: 300px;
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* Add fade-in animation */
+}
+
+.trip-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly more opaque background on hover */
+}
+
+.trip-card img {
+  width: 100%;
+  border-radius: 12px; /* Rounded corners for images */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.trip-card img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.trip-card button {
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.6em 1.2em;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: #ffcc80; /* Mild orange color */
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+}
+
+.trip-card button:hover {
+  background-color: #4169e1; /* Mild dark blue */
+  color: white;
+  transform: scale(1.05);
+  border-color: #4169e1; /* Border color to match the hover background */
+}
+
+.trip-card h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+.trip-card p {
+  margin: 0.3em 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Add animation to trip card appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trip-card {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+  .trip-cards {
+    gap: 1em; /* Adjust gap */
+  }
+}
+
+@media (max-width: 480px) {
+  .trip-card {
+    width: 100%; /* Full width for very small screens */
+  }
+  .trip-cards {
+    gap: 0.5em; /* Further adjusted gap */
+  }
+}

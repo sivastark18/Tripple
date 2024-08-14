@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('./images/bg3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+  }
+  
+  .community-blog {
+    padding: 40px 20px;
+    max-width: 900px; /* Reduced width for a more compact layout */
+    margin: 50px auto;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .community-blog h1 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ffa07a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: zoomIn 1.5s ease-in-out; /* Zoom-in animation for heading */
+  }
+  
+  .community-blog-image {
+    width: 100%;
+    height: 400px; /* Increased height for a clearer image view */
+    object-fit: cover; /* Ensures the image scales correctly */
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for better contrast */
+  }
+  
+  .community-blog-image:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+  }
+  
+  
+  .blog-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 1.5s ease-in-out; /* Slide-up animation for content */
+  }
+  
+  .blog-section {
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards; /* Fade-in and slide-up animation for sections */
+  }
+  
+  .blog-section h2 {
+    color: #ffa07a;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    animation: colorFade 2s ease-in-out infinite alternate; /* Color fade animation for section headings */
+  }
+  
+  .chat-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  .chat-options button {
+    background-color: #ffa07a;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 12px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions and added shadow */
+  }
+  
+  .chat-options button:hover {
+    background-color: #ff8c00;
+    transform: translateY(-3px) scale(1.05);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hover shadow effect */
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes colorFade {
+    from {
+      color: #ffa07a;
+    }
+    to {
+      color: #ff8c00;
+    }
+  }
+  
